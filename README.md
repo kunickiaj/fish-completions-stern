@@ -13,6 +13,12 @@ git clone https://github.com/kunickiaj/fish-completions-stern
 ln -s ../fish-completions-stern/completions/stern.fish completions/
 ```
 
+### Using fisher (recommended)
+
+```fish
+fisher add kunickiaj/fish-completions-stern
+```
+
 ### Using oh-my-fish
 
 ```fish
