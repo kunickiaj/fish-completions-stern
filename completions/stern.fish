@@ -88,6 +88,7 @@ complete -f -c stern -r -l exclude -c e -d 'Regex of log lines to exclude'
 complete -f -c stern -r -l exclude-container -c E -d 'Exclude a Container name'
 complete -f -c stern -l help -c h -d 'Show help for stern'
 complete -f -c stern -r -l include -c i -d 'Regex of log lines to include'
+complete -f -c stern -r -l init-containers -c -i -d 'Include or exclude init containers (default true)'
 complete -f -c stern -r -l kubeconfig -d 'Path to kubeconfig file to use'
 complete -f -c stern -r -l namespace -c n -d 'Kubernetes namespace to use. Default to namespace configured in Kubernetes context' -a "(__fish_kubectl_print_resource namespaces)"
 complete -f -c stern -r -l output -c o -d 'Predefined output template.' -a "default raw json"
