@@ -16,7 +16,7 @@ ln -s ../fish-completions-stern/completions/stern.fish completions/
 ### Using fisher (recommended)
 
 ```fish
-fisher add kunickiaj/fish-completions-stern
+fisher install kunickiaj/fish-completions-stern
 ```
 
 ### Using oh-my-fish
