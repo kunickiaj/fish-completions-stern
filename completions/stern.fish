@@ -95,5 +95,5 @@ complete -f -c stern -r -l selector -c l -d 'Selector (label query) to filter on
 complete -f -c stern -r -l since -c s -d 'Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to 48h.'
 complete -f -c stern -r -l tail -d 'The number of lines from the end of the logs to show. Defaults to showing all logs.'
 complete -f -c stern -r -l template -d 'Template to use for log lines, leave empty to use --output flag'
-complete -f -c stern -l timestmps -d 'Print timestamps'
+complete -f -c stern -l timestamps -d 'Print timestamps'
 complete -f -c stern -l version -d 'Print the version and exit'
