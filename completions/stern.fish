@@ -79,22 +79,26 @@ function __fish_kubectl_get_config -a type
 end
 
 complete -f -c stern -a "$cmd"
-complete -f -c stern -l all-namespaces -d 'If present, tail across all namespaces. A specific namespace is ignored even if specified with --namespace.'
+complete -f -c stern -l all-namespaces -s A -d 'If present, tail across all namespaces. A specific namespace is ignored even if specified with --namespace.'
 complete -f -c stern -r -l color -d 'Color output. Defaults to "auto"' -a "always never auto"
 complete -f -c stern -r -l container -s c -d 'Container name when multiple containers in pod (default ".*")'
 complete -f -c stern -r -l container-state -d 'If present, tail containers with status in running, waiting or terminated. Default to running. (default "running")'
 complete -f -c stern -r -l context -d 'Kubernetes context to use. Default to current context configured in kubeconfig.' -a "(__fish_kubectl_get_config contexts)"
-complete -f -c stern -r -l exclude -c e -d 'Regex of log lines to exclude'
-complete -f -c stern -r -l exclude-container -c E -d 'Exclude a Container name'
-complete -f -c stern -l help -c h -d 'Show help for stern'
-complete -f -c stern -r -l include -c i -d 'Regex of log lines to include'
-complete -f -c stern -r -l init-containers -c -i -d 'Include or exclude init containers (default true)'
+complete -f -c stern -r -l exclude -s e -d 'Regex of log lines to exclude'
+complete -f -c stern -r -l exclude-container -s E -d 'Exclude a Container name'
+complete -f -c stern -r -l exclude-pod -d 'Pod name to exclude. (regular expression)'
+complete -f -c stern -r -l field-selector -d 'Selector (field query) to filter on. If present, default to ".*" for the pod-query.'
+complete -f -c stern -l help -s h -d 'Show help for stern'
+complete -f -c stern -r -l include -s i -d 'Regex of log lines to include'
+complete -f -c stern -r -l init-containers -d 'Include or exclude init containers (default true)'
 complete -f -c stern -r -l kubeconfig -d 'Path to kubeconfig file to use'
-complete -f -c stern -r -l namespace -c n -d 'Kubernetes namespace to use. Default to namespace configured in Kubernetes context' -a "(__fish_kubectl_print_resource namespaces)"
-complete -f -c stern -r -l output -c o -d 'Predefined output template.' -a "default raw json"
-complete -f -c stern -r -l selector -c l -d 'Selector (label query) to filter on. If present, defaults to ".*"'
-complete -f -c stern -r -l since -c s -d 'Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to 48h.'
+complete -f -c stern -r -l namespace -s n -d 'Kubernetes namespace to use. Default to namespace configured in Kubernetes context' -a "(__fish_kubectl_print_resource namespaces)"
+complete -f -c stern -r -l output -s o -d 'Predefined output template.' -a "default raw json"
+complete -f -c stern -r -l prompt -s p -d "Toggle interactive prompt for selecting 'app.kubernetes.io/instance' label values"
+complete -f -c stern -r -l selector -s l -d 'Selector (label query) to filter on. If present, defaults to ".*"'
+complete -f -c stern -r -l since -s s -d 'Return logs newer than a relative duration like 5s, 2m, or 3h. Defaults to 48h.'
 complete -f -c stern -r -l tail -d 'The number of lines from the end of the logs to show. Defaults to showing all logs.'
 complete -f -c stern -r -l template -d 'Template to use for log lines, leave empty to use --output flag'
-complete -f -c stern -l timestamps -d 'Print timestamps'
+complete -f -c stern -r -l timestamps -s t -d 'Print timestamps'
+complete -f -c stern -r -l timezone -d 'Set timestamps to specific timezone. (default "Local")'
 complete -f -c stern -l version -d 'Print the version and exit'
